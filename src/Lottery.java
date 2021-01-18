@@ -17,7 +17,9 @@ public class Lottery {
 
     public static void main(String[] args) throws Exception {
 
-        for (int k = 0; k < 210; k++) {
+        Boolean keepTrying = false;
+
+        while(keepTrying == false) {
 
             generateNum();
 
@@ -30,11 +32,10 @@ public class Lottery {
                 Collections.sort(bigSeqVals);
                 Collections.sort(lowSeqVals);
                 System.out.println(bigSeqVals + " / " + lowSeqVals);
+                keepTrying = true;
             } 
             else {
-                Collections.sort(bigSeqVals);
-                Collections.sort(lowSeqVals);
-                System.out.println("DUPLICATE FOUND: " + bigSeqVals + " / " + lowSeqVals);
+                keepTrying = false;
             }
 
             deinitialise();
