@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,10 +27,14 @@ public class Lottery {
             if (bigSet.size() == bigSeqVals.size() 
             && lowSet.size() == lowSeqVals.size()) {
 
-                System.out.println(bigSeq + " / " + lowSeq);
+                Collections.sort(bigSeqVals);
+                Collections.sort(lowSeqVals);
+                System.out.println(bigSeqVals + " / " + lowSeqVals);
             } 
             else {
-                System.out.println("DUPLICATE FOUND: " + bigSeq + " / " + lowSeq);
+                Collections.sort(bigSeqVals);
+                Collections.sort(lowSeqVals);
+                System.out.println("DUPLICATE FOUND: " + bigSeqVals + " / " + lowSeqVals);
             }
 
             deinitialise();
